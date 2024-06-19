@@ -1,1 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+nav ul li {
+  padding: 0.5rem;
+}
+nav ul a {
+  color: #006769;
+  text-decoration: none;
+}
+
+#landing {
+  background: #40A578;
+}
+
+#greencheck {
+  background: #40A578;
+}
+
+#resources li::marker {
+  color: #006769;
+}
+#resources a {
+  color: #006769;
+}
+
+#mission {
+  background: #40A578;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+}
+#footer address {
+  font-style: normal;
+}
+
+body {
+  font-family: "Ubuntu Mono", sans-serif;
+  background: #A5DD9B;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

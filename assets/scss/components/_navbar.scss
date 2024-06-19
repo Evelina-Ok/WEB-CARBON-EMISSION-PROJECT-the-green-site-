@@ -1,0 +1,21 @@
+nav {
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        li {
+            padding: 0.5rem;
+        }
+
+        a {
+            color: $font-green;
+            text-decoration: none;
+        }
+    }
+}

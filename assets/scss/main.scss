@@ -2,3 +2,15 @@
 @import "./helper/mixins";
 @import "./helper/placeholders";
 @import "./helper/variables";
+@import "./components/_navbar.scss";
+@import "./components/_sections.scss";
+@import "./components/_footer.scss";
+
+body {
+    font-family: $main-font;
+    background: $bgr-light-green;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
