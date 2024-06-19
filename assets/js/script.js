@@ -18,6 +18,8 @@ const options = {
     // Nothing here
 }
 
+// Check whether Green host or not
+
 let greenCheckData = await fetchFunction('https://admin.thegreenwebfoundation.org/api/v3/greencheck/simply.com')
 
 // Green
@@ -32,7 +34,7 @@ let greenCheckData = await fetchFunction('https://admin.thegreenwebfoundation.or
 // ${greenCheckData.url} - Provided URL
 // ${greenCheckData.data} - Data: False
 
-console.log(greenCheckData);
+// console.log(greenCheckData);
 
 let greenCheckElm = document.createElement('p')
 
@@ -42,4 +44,25 @@ if (greenCheckData.green) {
     greenCheckElm.innerHTML = `We can't confirm that the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/511674/close-1511.svg"> `;
 }
 
-document.body.appendChild(greenCheckElm)
+// document.body.appendChild(greenCheckElm)
+
+// --------------------------------------------------
+
+// Calculate CO2 Intensity Data
+
+let calculateData = await fetchFunction('https://api.thegreenwebfoundation.org/api/v3/ip-to-co2intensity/simply.com')
+
+// console.log(calculateData);
+
+let calculateElm = document.createElement('p')
+
+calculateElm.innerHTML = `
+Carbon Intensity: ${calculateData.carbon_intensity} ${calculateData.carbon_intensity_type}. grams per kilowatt-hour (g/kWh)<br>
+Generation From Fossil: ${calculateData.generation_from_fossil} percent generated from fossil fuels<br>
+Checked IP/URL: ${calculateData.checked_ip}<br>
+Country: ${calculateData.country_name} (${calculateData.country_code_iso_2})<br>
+Year: ${calculateData.year} (Lastest data sample)<br>
+Data is provided by <a href="https://www.thegreenwebfoundation.org/" target="_blank">The Green Web Foundation</a> and <a href="https://ember-climate.org/data/data-explorer/" target="_blank">Ember</a>
+`
+
+document.body.appendChild(calculateElm)
