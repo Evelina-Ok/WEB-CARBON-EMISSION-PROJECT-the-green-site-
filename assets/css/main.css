@@ -47,6 +47,7 @@ nav ul a {
 body {
   font-family: "Ubuntu Mono", sans-serif;
   background: #A5DD9B;
+  min-width: 900px;
 }
 
 .uppercase {
