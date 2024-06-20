@@ -15,12 +15,49 @@ h1, p {
 
 #calculate {
     text-align: center;
+
+    #calculate-div {
+        background: $bgr-green;
+        border-radius: 1rem;
+        margin: 1rem;
+        padding: 0.5rem;
+        text-align: left;
+
+        p {
+            color: $font-white;
+        }
+
+        img {
+            height: 64px;
+            margin: 1rem;
+        }
+
+        a {
+            color: $font-green;
+        }
+    }
    
 }
 
 #greencheck {
     background: $bgr-green;
     text-align: center;
+
+    #greencheck-div {
+        background: $bgr-light-green;
+        border-radius: 1rem;
+        margin: 1rem;
+        padding: 0.5rem;
+
+        p {
+            color: black;
+        }
+
+        img {
+            height: 64px;
+            margin: 1rem;
+        }
+    }
    
 }
 
@@ -129,9 +166,15 @@ form {
         border: 0;
         font-size: 0.7rem;
         margin-bottom: 1rem;
+        text-align: center;
+
         &::placeholder {
             color: $font-white;
             text-align: center;
+        }
+
+        &:focus {
+            outline: none;
         }
     }
   
@@ -160,9 +203,15 @@ form {
         border: 0;
         font-size: 0.7rem;
         margin-bottom: 1rem;
+        text-align: center;
+
         &::placeholder {
             color: $font-green;
             text-align: center;
+        }
+
+        &:focus {
+            outline: none;
         }
     }
 }

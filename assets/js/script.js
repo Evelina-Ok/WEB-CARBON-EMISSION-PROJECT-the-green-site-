@@ -19,30 +19,30 @@ const options = {
 }
 
 // Check whether Green host or not
-let greenInputElm = document.createElement('input')
-let greenInputBtn = document.createElement('button')
-greenInputBtn.textContent = 'Button'
-
-document.body.appendChild(greenInputElm)
-document.body.appendChild(greenInputBtn)
+let greenInputElm = document.getElementById('greencheck-input')
+let greenInputBtn = document.getElementById('greencheck-button')
+let greenCheckView = document.getElementById('greencheck-div')
 
 let greenCheckElm = document.createElement('p')
-document.body.appendChild(greenCheckElm)
+greenCheckView.appendChild(greenCheckElm)
+greenCheckView.setAttribute('id', 'hidden')
 
-greenInputBtn.addEventListener('click', async () => {
+greenInputBtn.addEventListener('click', async (event) => {
+    event.preventDefault()
     let inputtedURL = greenInputElm.value;
 
     let greenCheckData = await fetchFunction(`https://admin.thegreenwebfoundation.org/api/v3/greencheck/${inputtedURL}`)
 
-    console.log(greenCheckData);
+    // console.log(greenCheckData);
 
     if (greenCheckData.green) {
         greenCheckElm.innerHTML = `Would you look at that, the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/356736/checkmark.svg">`;
     } else {
-        greenCheckElm.innerHTML = `We can't confirm that the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/511674/close-1511.svg"> `;
+        greenCheckElm.innerHTML = `We can't confirm that the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/511674/close-1511.svg">`;
     }
 
-    document.body.appendChild(greenCheckElm)
+    greenCheckView.appendChild(greenCheckElm)
+    greenCheckView.setAttribute('id', 'greencheck-div')
 })
 
 
@@ -66,19 +66,30 @@ greenInputBtn.addEventListener('click', async () => {
 
 // Calculate CO2 Intensity Data
 
-let calculateData = await fetchFunction('https://api.thegreenwebfoundation.org/api/v3/ip-to-co2intensity/simply.com')
+let calculateInputElm = document.getElementById('calculate-input')
+let calculateInputBtn = document.getElementById('calculate-button')
+let calculateView = document.getElementById('calculate-div')
 
-// console.log(calculateData);
+let calculateCheckElm = document.createElement('p')
+calculateView.appendChild(calculateCheckElm)
+calculateView.setAttribute('id', 'hidden')
 
-let calculateElm = document.createElement('p')
+calculateInputBtn.addEventListener('click', async (event) => {
+    event.preventDefault()
 
-calculateElm.innerHTML = `
-Carbon Intensity: ${calculateData.carbon_intensity} ${calculateData.carbon_intensity_type}. grams per kilowatt-hour (g/kWh)<br>
-Generation From Fossil: ${calculateData.generation_from_fossil} percent generated from fossil fuels<br>
-Checked IP/URL: ${calculateData.checked_ip}<br>
-Country: ${calculateData.country_name} (${calculateData.country_code_iso_2})<br>
-Year: ${calculateData.year} (Lastest data sample)<br>
-Data is provided by <a href="https://www.thegreenwebfoundation.org/" target="_blank">The Green Web Foundation</a> and <a href="https://ember-climate.org/data/data-explorer/" target="_blank">Ember</a>
-`
+    let inputtedURL = calculateInputElm.value;
 
-// document.body.appendChild(calculateElm)
+    let calculateData = await fetchFunction(`https://api.thegreenwebfoundation.org/api/v3/ip-to-co2intensity/${inputtedURL}`)
+
+    calculateCheckElm.innerHTML = `
+    Carbon Intensity: ${calculateData.carbon_intensity} ${calculateData.carbon_intensity_type}. grams per kilowatt-hour (g/kWh)<br>
+    Generation From Fossil: ${calculateData.generation_from_fossil} percent generated from fossil fuels<br>
+    Checked IP/URL: ${calculateData.checked_ip}<br>
+    Country: ${calculateData.country_name} (${calculateData.country_code_iso_2})<br>
+    Year: ${calculateData.year} (Lastest data sample)<br><br>
+    Data is provided by<br> <a href="https://www.thegreenwebfoundation.org/" target="_blank">The Green Web Foundation</a> and <a href="https://ember-climate.org/data/data-explorer/" target="_blank">Ember</a>
+    `
+
+    calculateView.appendChild(calculateCheckElm)
+    calculateView.setAttribute('id', 'calculate-div')
+})
