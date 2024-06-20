@@ -1,0 +1,13 @@
+#footer {
+
+    display: flex;
+    flex-direction: row;
+
+    background-color: $bgr-green;
+    margin: 0;
+    
+    address {
+        font-style: normal;
+    }
+    @extend %margin-doc;
+}
