@@ -80,6 +80,9 @@ h1, p {
   height: 64px;
   margin: 1rem;
 }
+#greencheck #greencheck-div a {
+  color: #006769;
+}
 
 #resources li::marker {
   color: #006769;

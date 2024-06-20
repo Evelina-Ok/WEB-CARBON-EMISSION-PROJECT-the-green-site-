@@ -57,6 +57,14 @@ h1, p {
             height: 64px;
             margin: 1rem;
         }
+
+        a {
+            color: $font-green;
+        }
+
+        // &:last-of-type div {
+        //     text-align: left;
+        // }
     }
    
 }
