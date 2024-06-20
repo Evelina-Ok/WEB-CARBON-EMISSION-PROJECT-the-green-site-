@@ -1,13 +1,27 @@
+section {
+    @extend %padding-section;
+    position: relative;
+}
+
+
 #landing {
     background: $bgr-green;
+    
+}
+
+h1, p {
+    color: $yellow;
 }
 
 #calculate {
-    
+    text-align: center;
+   
 }
 
 #greencheck {
     background: $bgr-green;
+    text-align: center;
+   
 }
 
 #resources {
@@ -19,8 +33,141 @@
     a {
         color: $font-green;
     }
+    ul {
+        margin: 0;
+        padding: 1rem;
+    }
 }
 
 #mission {
     background: $bgr-green;
+    article p {
+        color: $font-white;
+    }
+}
+
+.dark-span {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: $bgr-light-green;
+    border-color: $bgr-green;
+    border-width: 7px;
+    border-style: solid;
+    position: absolute;
+    z-index: 99;
+
+
+    left: 8%;
+    top: -13%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        color: $bgr-green;
+        font-size: 0.8rem;
+        position: absolute;
+        text-align: center;
+    }
+}
+
+.light-span {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: $bgr-green;
+    border-color: $bgr-light-green;
+    border-width: 7px;
+    border-style: solid;
+    position: absolute;
+    z-index: 99;
+    
+    left: 8%;
+    top: -13%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {        
+        color: $bgr-light-green;
+        font-size: 0.8rem;
+        position: absolute;
+        text-align: center;
+    }
+}
+
+form {
+    *{
+        display: block;
+        margin: auto;
+    }
+}
+
+.dark {
+    h3 {
+        color: $font-green;
+    }
+    p {
+        color: $font-green;
+    }
+    button {
+        color: $font-white;
+        background-color: $bgr-green;
+        border-radius: 15px;
+        padding: 0.2rem 1.5rem;
+        border: 0;
+        font-size: 0.7rem;
+       
+    }
+    input {         
+        background-color: $bgr-green;
+        border-radius: 15px;
+        padding: 0.4rem 1.8rem;
+        border: 0;
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+        &::placeholder {
+            color: $font-white;
+            text-align: center;
+        }
+    }
+  
+}
+
+.light {
+    h3  {
+        color: $yellow;
+    }
+    p {
+        color: $yellow; 
+    }
+    button {
+        color: $font-green;
+        background-color: $bgr-light-green;
+        border-radius: 15px;
+        padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+        border: 0;
+        font-size: 0.7rem;
+        
+    }
+    input {         
+        background-color: $bgr-light-green;
+        border-radius: 15px;
+        padding: 0.4rem 1.8rem;
+        border: 0;
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+        &::placeholder {
+            color: $font-green;
+            text-align: center;
+        }
+    }
+}
+
+
+#calculate h3:first-of-type {  
+    color: $bgr-green;    
 }
