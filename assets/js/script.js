@@ -2,7 +2,7 @@ const fetchFunction = async (url, options = null) => {
     try {
         let res = await fetch (url, options);
         if (!res.ok) {
-            throw new Error('HTTP error! status: ${res.status}');
+            throw new Error(`HTTP error! status: ${res.status}`);
         }
 
         let json = await res.json();
