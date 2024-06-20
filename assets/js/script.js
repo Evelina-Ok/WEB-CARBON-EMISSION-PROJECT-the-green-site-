@@ -19,8 +19,34 @@ const options = {
 }
 
 // Check whether Green host or not
+let greenInputElm = document.createElement('input')
+let greenInputBtn = document.createElement('button')
+greenInputBtn.textContent = 'Button'
 
-let greenCheckData = await fetchFunction('https://admin.thegreenwebfoundation.org/api/v3/greencheck/simply.com')
+document.body.appendChild(greenInputElm)
+document.body.appendChild(greenInputBtn)
+
+let greenCheckElm = document.createElement('p')
+document.body.appendChild(greenCheckElm)
+
+greenInputBtn.addEventListener('click', async () => {
+    let inputtedURL = greenInputElm.value;
+
+    let greenCheckData = await fetchFunction(`https://admin.thegreenwebfoundation.org/api/v3/greencheck/${inputtedURL}`)
+
+    console.log(greenCheckData);
+
+    if (greenCheckData.green) {
+        greenCheckElm.innerHTML = `Would you look at that, the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/356736/checkmark.svg">`;
+    } else {
+        greenCheckElm.innerHTML = `We can't confirm that the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/511674/close-1511.svg"> `;
+    }
+
+    document.body.appendChild(greenCheckElm)
+})
+
+
+
 
 // Green
 // ${greenCheckData.green} - Green: True
@@ -34,17 +60,7 @@ let greenCheckData = await fetchFunction('https://admin.thegreenwebfoundation.or
 // ${greenCheckData.url} - Provided URL
 // ${greenCheckData.data} - Data: False
 
-// console.log(greenCheckData);
 
-let greenCheckElm = document.createElement('p')
-
-if (greenCheckData.green) {
-    greenCheckElm.innerHTML = `Would you look at that, the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/356736/checkmark.svg">`;
-} else {
-    greenCheckElm.innerHTML = `We can't confirm that the provided URL (${greenCheckData.url}) is hosted Green.<br><img src="https://www.svgrepo.com/show/511674/close-1511.svg"> `;
-}
-
-// document.body.appendChild(greenCheckElm)
 
 // --------------------------------------------------
 
@@ -65,4 +81,4 @@ Year: ${calculateData.year} (Lastest data sample)<br>
 Data is provided by <a href="https://www.thegreenwebfoundation.org/" target="_blank">The Green Web Foundation</a> and <a href="https://ember-climate.org/data/data-explorer/" target="_blank">Ember</a>
 `
 
-document.body.appendChild(calculateElm)
+// document.body.appendChild(calculateElm)
