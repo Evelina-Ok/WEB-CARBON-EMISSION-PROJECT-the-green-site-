@@ -36,10 +36,11 @@ section {
 
 #landing {
   background: #40A578;
+  padding-bottom: 5rem;
 }
-
-h1, p {
+#landing h1, #landing p {
   color: #E6FF94;
+  z-index: 999;
 }
 
 #calculate {
@@ -100,6 +101,42 @@ h1, p {
 }
 #mission article p {
   color: #FFFFFF;
+}
+
+.landing-span {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border-color: #E6FF94;
+  border-width: 4px;
+  border-style: solid;
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  transform: translateX(-50%);
+  z-index: 98;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-span2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #40A578;
+  border-color: #E6FF94;
+  border-width: 4px;
+  border-style: solid;
+  position: absolute;
+  top: 63%;
+  left: 60%;
+  transform: translate(-50% -50%);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dark-span {
@@ -246,7 +283,9 @@ h3 {
 
 h1 {
   font-weight: 200;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  padding-left: 4rem;
+  margin-top: 3rem;
 }
 
 p {
@@ -293,4 +332,5 @@ p {
   .hidden {
     display: none;
   }
+}
 }
