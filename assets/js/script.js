@@ -142,3 +142,33 @@ greenInputBtn.addEventListener('click', async (event) => {
 // ${greenCheckData.green} - Green: False
 // ${greenCheckData.url} - Provided URL
 // ${greenCheckData.data} - Data: False
+
+// -------------------- Back To Top --------------------
+
+window.onscroll = function() {scrollProgress()};
+
+function scrollProgress() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
+}
+
+// -------------------- Back To Top --------------------
+
+let backToTopBtn = document.getElementById('backToTopBtn')
+
+window.addEventListener('scroll', scrollFunction)
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+}
+
+backToTopBtn.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
