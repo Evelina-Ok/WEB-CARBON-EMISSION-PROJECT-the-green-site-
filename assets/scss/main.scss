@@ -6,12 +6,16 @@
 @import "./components/_sections.scss";
 @import "./components/_footer.scss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: $main-font;
     background: $bgr-light-green;
     margin: auto;
     font-weight: 200;
-       
+    
 }
 
 h3 {

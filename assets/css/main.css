@@ -229,6 +229,10 @@ form * {
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Ubuntu Mono", sans-serif;
   background: #A5DD9B;
