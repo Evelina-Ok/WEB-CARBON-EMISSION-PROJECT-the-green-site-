@@ -5,6 +5,14 @@
 }
 
 @media (min-width: 900px) {
-    width: 900px;
+    .navbar {
+        width: 900px;
+
+        ul {
+            font-size: 1rem;
+        }
+
+    }
+    
 }
 

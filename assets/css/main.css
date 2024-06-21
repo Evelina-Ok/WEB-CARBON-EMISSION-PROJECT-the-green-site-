@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-#footer, nav ul {
+nav ul {
   margin: 1rem;
 }
 
 section {
   padding: 2rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center-text {
+  text-align: center;
 }
 
 nav {
@@ -32,19 +40,67 @@ nav ul a {
 
 section {
   position: relative;
+  display: flex;
+  justify-content: center;
+}
+section h3 {
+  font-weight: 200;
+}
+section p {
+  font-size: 0.8rem;
+}
+
+.section-wrap {
+  max-width: 900px;
 }
 
 #landing {
+  height: 200px;
   background: #40A578;
+  padding-top: 5rem;
   padding-bottom: 5rem;
+}
+#landing h1 {
+  z-index: 99;
+  font-weight: 200;
+  font-size: 3rem;
+  margin: 0;
+  position: absolute;
+  top: 7%;
+  left: 39%;
+  transform: translateX(-50%);
 }
 #landing h1, #landing p {
   color: #E6FF94;
-  z-index: 999;
+}
+#landing .landing-span {
+  width: 280px;
+  height: 280px;
+  border: solid 1px #E6FF94;
+  border-radius: 50%;
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 98;
+}
+#landing .landing-span2 {
+  width: 126px;
+  height: 126px;
+  background-color: #40A578;
+  border: solid 1px #E6FF94;
+  border-radius: 50%;
+  position: absolute;
+  top: 49%;
+  left: 53%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#calculate {
-  text-align: center;
+#calculate h3:first-of-type {
+  color: #40A578;
 }
 #calculate #calculate-div {
   background: #40A578;
@@ -66,7 +122,9 @@ section {
 
 #greencheck {
   background: #40A578;
-  text-align: center;
+}
+#greencheck p:not(:first-child) {
+  color: #FFFFFF;
 }
 #greencheck #greencheck-div {
   background: #A5DD9B;
@@ -75,7 +133,7 @@ section {
   padding: 0.5rem;
 }
 #greencheck #greencheck-div p {
-  color: black;
+  color: #000000;
 }
 #greencheck #greencheck-div img {
   height: 64px;
@@ -101,42 +159,6 @@ section {
 }
 #mission article p {
   color: #FFFFFF;
-}
-
-.landing-span {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border-color: #E6FF94;
-  border-width: 4px;
-  border-style: solid;
-  position: absolute;
-  top: 6%;
-  left: 50%;
-  transform: translate(-50% -50%);
-  transform: translateX(-50%);
-  z-index: 98;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.landing-span2 {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #40A578;
-  border-color: #E6FF94;
-  border-width: 4px;
-  border-style: solid;
-  position: absolute;
-  top: 63%;
-  left: 60%;
-  transform: translate(-50% -50%);
-  z-index: 99;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .dark-span {
@@ -224,9 +246,6 @@ form * {
 .light h3 {
   color: #E6FF94;
 }
-.light p {
-  color: #E6FF94;
-}
 .light button {
   color: #006769;
   background-color: #A5DD9B;
@@ -252,48 +271,15 @@ form * {
   outline: none;
 }
 
-#calculate h3:first-of-type {
-  color: #40A578;
-}
-
-#footer {
-  display: flex;
-  flex-direction: row;
+footer {
   background-color: #40A578;
   margin: 0;
 }
-#footer address {
+footer p {
+  margin: 0;
+}
+footer address {
   font-style: normal;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Ubuntu Mono", sans-serif;
-  background: #A5DD9B;
-  margin: auto;
-  font-weight: 200;
-}
-
-h3 {
-  font-weight: 200;
-}
-
-h1 {
-  font-weight: 200;
-  font-size: 2rem;
-  padding-left: 4rem;
-  margin-top: 3rem;
-}
-
-p {
-  font-size: 0.8rem;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 #progressContainer {
@@ -333,4 +319,20 @@ p {
     display: none;
   }
 }
+@media (min-width: 900px) {
+  .navbar {
+    width: 900px;
+  }
+  .navbar ul {
+    font-size: 1rem;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Ubuntu Mono", sans-serif;
+  background: #A5DD9B;
+  margin: auto;
 }

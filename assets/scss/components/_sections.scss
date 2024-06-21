@@ -1,22 +1,88 @@
 section {
     @extend %padding-section;
     position: relative;
+    display: flex;
+    justify-content: center;
+
+    h3 {
+        font-weight: 200;
+    }
+    
+    p {
+        font-size: 0.8rem;
+    }
+
 }
 
+.section-wrap {
+    max-width: 900px;
+}
 
 #landing {
+    height: 200px;
     background: $bgr-green;
+    padding-top: 5rem;
     padding-bottom: 5rem;
+
+    h1 {
+        z-index: 99;
+        font-weight: 200;
+        font-size: 3rem;
+        margin: 0;
+        // padding-left: 4rem;
+        // margin-top: 3rem;
+        // margin-bottom: 4rem;
+        // word-break: break-all;       //Sometimes would only break line for longest words 
+        position: absolute;
+        top: 7%;
+        left: 39%;
+        transform: translateX(-50%);
+    }
+
     h1, p {
         color: $yellow;        
-        z-index: 999;
-    }    
+        
+    }
+
+    // landing circles
+    .landing-span {
+        width: 280px;
+        height: 280px;
+        // background-color: $bgr-green;
+        border: solid 1px $yellow;
+        border-radius: 50%;
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        // transform: translate(-50% -50%);
+        // transform: translateY(-95%);
+        transform: translateX(-50%);
+        // transform: translateZ(10%);
+        z-index: 98;
+    }
+
+    .landing-span2 {
+        width: 126px;
+        height: 126px;
+        background-color: $bgr-green;
+        border: solid 1px $yellow;
+        border-radius: 50%;
+        position: absolute;
+        top: 49%;
+        left: 53%;
+        // transform: translate(-50% -50%);
+        // transform: translateY(-120%);
+        // transform: translateX(-120%);
+        z-index: 99;
+        @include flex-center-center;
+    }
 }
 
-
-
 #calculate {
-    text-align: center;
+
+    h3:first-of-type {  
+        color: $bgr-green;    
+    }
 
     #calculate-div {
         background: $bgr-green;
@@ -43,7 +109,10 @@ section {
 
 #greencheck {
     background: $bgr-green;
-    text-align: center;
+
+    p:not(:first-child) {
+        color: $font-white;
+    }
 
     #greencheck-div {
         background: $bgr-light-green;
@@ -52,7 +121,7 @@ section {
         padding: 0.5rem;
 
         p {
-            color: black;
+            color: $font-black;
         }
 
         img {
@@ -93,56 +162,6 @@ section {
     }
 }
 
-// landing circles
-.landing-span {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    // background-color: $bgr-green;
-    border-color: $yellow;
-    border-width: 4px;
-    border-style: solid;
-    position: absolute;
-    top: 6%;
-    left: 50%;
-    transform: translate(-50% -50%);
-    // transform: translateY(-95%);
-    transform: translateX(-50%);
-    // transform: translateZ(10%);
-    z-index: 98;
-     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.landing-span2 {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: $bgr-green;
-    border-color: $yellow;
-    border-width: 4px;
-    border-style: solid;
-    position: absolute;
-    top: 63%;
-    left: 60%;
-    transform: translate(-50% -50%);
-    // transform: translateY(-95%);
-    // transform: translateX(-50%);
-    z-index: 99;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-// #landing p {
-//     color: $yellow;
-//         font-size: 0.8rem;
-//         position: absolute;
-//         text-align: center;
-//         z-index: 999;
-// }
-
 .dark-span {
     width: 65px;
     height: 65px;
@@ -158,9 +177,7 @@ section {
     left: 8%;
     top: -13%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-center;
 
     p {
         color: $bgr-green;
@@ -180,13 +197,10 @@ section {
     border-style: solid;
     position: absolute;
     z-index: 99;
-    
     left: 8%;
     top: -13%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-center;
 
     p {        
         color: $bgr-light-green;
@@ -197,7 +211,7 @@ section {
 }
 
 form {
-    *{
+    * {
         display: block;
         margin: auto;
     }
@@ -207,9 +221,11 @@ form {
     h3 {
         color: $font-green;
     }
+
     p {
         color: $font-green;
     }
+
     button {
         color: $font-white;
         background-color: $bgr-green;
@@ -219,6 +235,7 @@ form {
         font-size: 0.7rem;
        
     }
+
     input {         
         background-color: $bgr-green;
         border-radius: 15px;
@@ -237,16 +254,13 @@ form {
             outline: none;
         }
     }
-  
 }
 
 .light {
-    h3  {
+    h3 {
         color: $yellow;
     }
-    p {
-        color: $yellow; 
-    }
+
     button {
         color: $font-green;
         background-color: $bgr-light-green;
@@ -256,6 +270,7 @@ form {
         font-size: 0.7rem;
         
     }
+
     input {         
         background-color: $bgr-light-green;
         border-radius: 15px;
@@ -274,9 +289,4 @@ form {
             outline: none;
         }
     }
-}
-
-
-#calculate h3:first-of-type {  
-    color: $bgr-green;    
 }

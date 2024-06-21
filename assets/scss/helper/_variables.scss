@@ -2,6 +2,19 @@ $main-font: 'Ubuntu Mono', sans-serif;
 
 $font-green: #006769;
 $font-white: #FFFFFF;
+$font-black: #000000;
 $bgr-green: #40A578;
 $bgr-light-green:#A5DD9B;
 $yellow: #E6FF94;
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.center-text {
+    text-align: center;
+}
+
+// .hidden {
+//     display: none;
+// }
