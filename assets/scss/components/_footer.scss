@@ -1,6 +1,15 @@
 footer {
     background-color: $bgr-green;
     margin: 0;
+    color: $font-white;
+    display: flex;
+    padding: 0 1rem 1rem 1rem;
+    height: 200px;
+
+    .footer-wrap {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+    }
     
     p {
         margin: 0;
@@ -8,5 +17,68 @@ footer {
     
     address {
         font-style: normal;
+    }
+
+    button {
+        color: $yellow;
+        background-color: transparent;
+        border-radius: 15px;
+        padding: 0.2rem 1.5rem;
+        border: solid 1px $yellow;
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
+       
+    }
+
+    input {         
+        background-color: $yellow;
+        border-radius: 15px;
+        padding: 0.5rem;
+        border: 0;
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+        margin-left: 0.5rem;
+
+        &::placeholder {
+            color: $bgr-green;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .footer-span1 {
+        width: 90px;
+        height: 90px;
+        background-color: $bgr-green;
+        border: solid 1px $yellow;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 99;
+        @include flex-center-center;
+
+        p {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .wce-yellow {
+            color: $yellow;
+            font-size: 1.5rem;
+        }
+    }
+
+    .footer-span2 {
+        width: 40px;
+        height: 40px;
+        background-color: $bgr-green;
+        border: solid 1px $yellow;
+        border-radius: 50%;
+        position: relative;
+        bottom: -35%;
+        right: -25%;
+        z-index: 99;
+        @include flex-center-center;
     }
 }

@@ -52,6 +52,7 @@ section p {
 
 .section-wrap {
   max-width: 900px;
+  min-height: 300px;
 }
 
 #landing {
@@ -143,15 +144,18 @@ section p {
   color: #006769;
 }
 
-#resources li::marker {
-  color: #006769;
-}
 #resources a {
   color: #006769;
 }
 #resources ul {
   margin: 0;
   padding: 1rem;
+}
+#resources li {
+  padding-top: 1rem;
+}
+#resources li::marker {
+  color: #006769;
 }
 
 #mission {
@@ -274,12 +278,78 @@ form * {
 footer {
   background-color: #40A578;
   margin: 0;
+  color: #FFFFFF;
+  display: flex;
+  padding: 0 1rem 1rem 1rem;
+  height: 200px;
+}
+footer .footer-wrap {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
 }
 footer p {
   margin: 0;
 }
 footer address {
   font-style: normal;
+}
+footer button {
+  color: #E6FF94;
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 0.2rem 1.5rem;
+  border: solid 1px #E6FF94;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+footer input {
+  background-color: #E6FF94;
+  border-radius: 15px;
+  padding: 0.5rem;
+  border: 0;
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+footer input::placeholder {
+  color: #40A578;
+}
+footer input:focus {
+  outline: none;
+}
+footer .footer-span1 {
+  width: 90px;
+  height: 90px;
+  background-color: #40A578;
+  border: solid 1px #E6FF94;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-span1 p {
+  font-weight: 400;
+  font-size: 1rem;
+}
+footer .footer-span1 .wce-yellow {
+  color: #E6FF94;
+  font-size: 1.5rem;
+}
+footer .footer-span2 {
+  width: 40px;
+  height: 40px;
+  background-color: #40A578;
+  border: solid 1px #E6FF94;
+  border-radius: 50%;
+  position: relative;
+  bottom: -35%;
+  right: -25%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #progressContainer {
@@ -325,6 +395,117 @@ footer address {
   }
   .navbar ul {
     font-size: 1rem;
+  }
+  #landing {
+    height: 300px;
+  }
+  #landing h1 {
+    font-size: 4rem;
+    top: 7%;
+    left: 41%;
+  }
+  #landing .landing-span {
+    width: 350px;
+    height: 350px;
+    top: 6%;
+    left: 50%;
+  }
+  #landing .landing-span2 {
+    width: 150px;
+    height: 150px;
+    top: 49%;
+    left: 53%;
+  }
+  #landing .landing-span2 p {
+    font-size: 1rem;
+  }
+  .dark-span {
+    width: 80px;
+    height: 80px;
+    left: 18%;
+    top: -13%;
+  }
+  .dark-span p {
+    color: #40A578;
+    font-size: 1rem;
+  }
+  .light-span {
+    width: 80px;
+    height: 80px;
+    left: 18%;
+    top: -13%;
+  }
+  .light-span p {
+    font-size: 1rem;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  footer .footer-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.2fr;
+    gap: 2rem;
+    max-height: 300px;
+    width: 1100px;
+  }
+  footer button {
+    color: #E6FF94;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 0.2rem 1.5rem;
+    border: solid 1px #E6FF94;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  footer input {
+    background-color: #E6FF94;
+    border-radius: 15px;
+    padding: 0.5rem;
+    border: 0;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+  }
+  footer input::placeholder {
+    color: #40A578;
+  }
+  footer input:focus {
+    outline: none;
+  }
+  footer .footer-span1 {
+    width: 180px;
+    height: 180px;
+    background-color: #40A578;
+    border: solid 1px #E6FF94;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-span1 p {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  footer .footer-span1 .wce-yellow {
+    color: #E6FF94;
+    font-size: 4rem;
+  }
+  footer .footer-span2 {
+    width: 90px;
+    height: 90px;
+    background-color: #40A578;
+    border: solid 1px #E6FF94;
+    border-radius: 50%;
+    position: relative;
+    bottom: -55%;
+    right: -45%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 html {

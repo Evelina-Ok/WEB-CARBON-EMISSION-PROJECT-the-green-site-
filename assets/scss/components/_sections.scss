@@ -16,6 +16,7 @@ section {
 
 .section-wrap {
     max-width: 900px;
+    min-height: 300px;
 }
 
 #landing {
@@ -142,16 +143,21 @@ section {
 
 #resources {
 
-    li::marker {
-        color: $font-green;
-    }
-
     a {
         color: $font-green;
     }
+
     ul {
         margin: 0;
         padding: 1rem;
+    }
+
+    li {
+        padding-top: 1rem;
+
+        &::marker {
+            color: $font-green;
+        }
     }
 }
 
@@ -172,8 +178,6 @@ section {
     border-style: solid;
     position: absolute;
     z-index: 99;
-
-
     left: 8%;
     top: -13%;
 

@@ -13,6 +13,135 @@
         }
 
     }
+
+    #landing {
+        height: 300px;
+
+        h1 {
+            font-size: 4rem;
+            top: 7%;
+            left: 41%;
+        }
     
+        // landing circles
+        .landing-span {
+            width: 350px;
+            height: 350px;
+            top: 6%;
+            left: 50%;
+        }
+    
+        .landing-span2 {
+            width: 150px;
+            height: 150px;
+            top: 49%;
+            left: 53%;
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .dark-span {
+        width: 80px;
+        height: 80px;
+        left: 18%;
+        top: -13%;
+    
+        p {
+            color: $bgr-green;
+            font-size: 1rem;
+        }
+    }
+    
+    .light-span {
+        width: 80px;
+        height: 80px;
+        left: 18%;
+        top: -13%;
+
+        p {        
+            font-size: 1rem;
+        }
+    }
+    
+    footer {
+        display: flex;
+        justify-content: center;
+
+        .footer-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1.2fr;
+            gap: 2rem;
+            max-height: 300px;
+            width: 1100px;
+        }
+
+        button {
+            color: $yellow;
+            background-color: transparent;
+            border-radius: 15px;
+            padding: 0.2rem 1.5rem;
+            border: solid 1px $yellow;
+            font-size: 0.7rem;
+            margin: 0;
+           
+        }
+    
+        input {         
+            background-color: $yellow;
+            border-radius: 15px;
+            padding: 0.5rem;
+            border: 0;
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+            margin-left: 0;
+    
+            &::placeholder {
+                color: $bgr-green;
+            }
+    
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .footer-span1 {
+            width: 180px;
+            height: 180px;
+            background-color: $bgr-green;
+            border: solid 1px $yellow;
+            border-radius: 50%;
+            position: absolute;
+            // top: 90%;
+            // left: 53%;
+            z-index: 99;
+            @include flex-center-center;
+
+            p {
+                font-weight: 400;
+                font-size: 1.5rem;
+            }
+
+            .wce-yellow {
+                color: $yellow;
+                font-size: 4rem;
+            }
+        }
+
+        .footer-span2 {
+            width: 90px;
+            height: 90px;
+            background-color: $bgr-green;
+            border: solid 1px $yellow;
+            border-radius: 50%;
+            position: relative;
+            bottom: -55%;
+            right: -45%;
+            z-index: 99;
+            @include flex-center-center;
+        }
+    }
 }
 
