@@ -1,4 +1,4 @@
-@media (max-width: 700px) {
+@media (max-width: 767px) {
     .hidden {
         display: none;
     }
@@ -81,9 +81,9 @@
         button {
             color: $yellow;
             background-color: transparent;
-            border-radius: 15px;
             padding: 0.2rem 1.5rem;
             border: solid 1px $yellow;
+            border-radius: 15px;
             font-size: 0.7rem;
             margin: 0;
            
@@ -91,9 +91,9 @@
     
         input {         
             background-color: $yellow;
-            border-radius: 15px;
             padding: 0.5rem;
             border: 0;
+            border-radius: 15px;
             font-size: 0.7rem;
             margin-bottom: 1rem;
             margin-left: 0;
@@ -110,22 +110,12 @@
         .footer-span1 {
             width: 180px;
             height: 180px;
-            background-color: $bgr-green;
-            border: solid 1px $yellow;
-            border-radius: 50%;
-            position: absolute;
-            // top: 90%;
-            // left: 53%;
-            z-index: 99;
-            @include flex-center-center;
 
             p {
-                font-weight: 400;
                 font-size: 1.5rem;
             }
 
             .wce-yellow {
-                color: $yellow;
                 font-size: 4rem;
             }
         }
@@ -133,14 +123,8 @@
         .footer-span2 {
             width: 90px;
             height: 90px;
-            background-color: $bgr-green;
-            border: solid 1px $yellow;
-            border-radius: 50%;
-            position: relative;
             bottom: -55%;
             right: -45%;
-            z-index: 99;
-            @include flex-center-center;
         }
     }
 }
